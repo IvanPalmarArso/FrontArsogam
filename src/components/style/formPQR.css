@@ -1,0 +1,94 @@
+/*
+    Font Style
+*/
+@font-face {
+    font-family: "Bella";
+    src: url('../fonts/Bella.ttf');
+}
+
+.containerForm1 {
+    background: rgb(91, 184, 131);
+    width: 400px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+}
+
+.containerForm1 h2{
+    width: 100%;
+    font-family: "Bella";
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+.formTecnic1 label{
+    font-family: "Bella";
+    font-size: 1.3rem;
+}
+
+.formTecnic1 input, textarea, select{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.formTecnic1 textarea{
+    height: 120px;
+    resize: none;
+}
+
+.formTecnic1 select{
+    text-align: center;
+}
+
+.containerButtonSubmit1{
+    text-align: center;
+}
+
+.formTecnic1 button{
+    padding: 10px;
+    width: 30%;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-family: "Bella";
+    font-size: 1.1rem;
+}
+
+.formTecnic1 button:hover{
+    transition: all ease-in 0.3s;
+    color: white;
+    background-color: black;
+}
+
+@media (max-width:900px) {
+
+    .containerForm1{
+        width: auto;
+    }
+
+    .containerForm1 h2{
+        font-size: 1.5rem;
+    }
+    .formTecnic1 label{
+        font-size: 1.2em;
+    }
+    .formTecnic1 input, textarea{
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    
+    .formTecnic1 button{
+        width: 50%;
+    }
+}

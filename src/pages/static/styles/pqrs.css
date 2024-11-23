@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Bella';
+    src: url('../fonts/Bella.ttf');
+}
+
+.containerPQRS{
+    background-image: url('../img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 300px;
+    padding-bottom: 6%;    
+    padding-top: 8%;
+}
+
+.containerBullPqrs{
+    text-align: center;
+}
+
+.containerBullPqrs img{
+    width: 18%;
+}
+
+.containerInfoPQRS{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+}
+
+.containerTextPQRS{
+    width: 70%;
+}
+
+.containerTextPQRS span{
+    color: rgb(0, 101, 51);
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.containerTextPQRS p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.containerFormPqr{
+    background: rgb(91, 184, 131);
+    margin-top: 30px;
+    border-radius: 40px;
+}
+
+@media (max-width: 1800px) {
+    .containerPQRS{        
+        padding: 200px;
+        padding-top: 12%;
+        padding-bottom: 5%;
+        background-size: contain;        
+        background-repeat: repeat;        
+        background-position: center;       
+    }
+
+    .containerInfoPQRS{
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .containerPQRS{
+        background-image: url('../img/backgroundResponsive.jpeg');
+    }
+}
+
+@media (max-width:900px) {
+    .containerPQRS{
+        padding: 0px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    .containerBullPqrs img{
+        width: 50%;
+    }
+
+    .containerInfoPQRS{
+        flex-direction: column;
+        padding: 50px;
+        padding-top: 10px;
+    }
+
+    .containerFormPqr{        
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .containerTextPQRS{
+        width: 100%;
+        text-align: justify;
+    }
+}

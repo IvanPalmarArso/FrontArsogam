@@ -1,0 +1,16 @@
+.imageCarousel{
+    width: 110%;
+    height: 120vh;
+}
+
+@media (max-width:1200px) {
+    .imageCarousel{
+        height: 600px;
+    }
+}
+
+@media (max-width: 900px) {
+    .imageCarousel{
+        height: 400px;
+    }
+}

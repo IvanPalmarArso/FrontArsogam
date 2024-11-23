@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Bella';
+    src: url('../fonts/Bella.ttf');
+}
+
+.sectionHome{
+    text-align: center;
+    display: flex;
+}
+
+.containerInfoHome{
+    background-image: url('../img/backgroundResponsive.jpeg');
+    background-size:cover;
+    padding-top: 20%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerTitle{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 10px;
+}
+
+.titleMain{
+    border-bottom: 5px solid black;
+    padding-bottom: 10px;
+    font-family: 'Bella';
+    font-size: 8rem;
+    color: rgb(0, 101, 51);
+
+}
+
+.subtitleMain{
+    font-family: 'Bella';
+    font-size: 2.1rem;
+    color: rgb(0, 101, 51);
+}
+
+.imageFarm{
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 140px;
+
+}
+
+.subtitleImage{
+    width: 110%;
+    height: 250px;
+}
+
+.containerCarrousel{
+    width: 50%;    
+    background-image: url('../img/backgroundResponsive.jpeg');
+    padding-top: 5.4%;
+}
+
+@media (max-width:1800px) {
+    .containerInfoHome{
+        padding-top: 20%;
+    }
+    .containerCarrousel{
+        padding-top: 5.7%;
+    }
+    .titleMain{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width : 1650px) {
+    .containerCarrousel{
+        padding-top: 6%;
+    }
+}
+
+@media (max-width:1600px) {
+    .containerInfoHome{
+        padding-top: 25%;
+    }
+    .containerCarrousel{
+        padding-top: 7%;
+    }
+}
+
+@media (max-width: 1550px) {
+    .containerInfoHome{
+        padding-top: 23%;
+    }
+    .containerCarrousel{
+        padding-top: 6%;        
+    }
+}
+
+@media (max-width : 1500px) {
+    .containerCarrousel{
+        padding-top: 10%;
+    }
+}
+
+@media (max-width:1400px) {
+    .containerCarrousel{
+        padding-top: 11%;
+    }
+}
+
+@media (max-width:1250px) {    
+    
+    .subtitleMain{
+        font-size: 1.5rem;
+    }    
+
+    .containerCarrousel{
+        padding-top: 13%;
+    }
+
+    .titleMain{
+        font-size: 5rem;
+    }
+    
+}
+
+@media (max-width:1190px) {
+
+    .titleMain{
+        font-size: 3.5rem;
+    }
+
+    .subtitleMain{
+        font-size: 1.2rem;
+    }
+
+    .sectionHome{
+        display: block;
+    }
+
+    .containerInfoHome{
+        width: 100%;
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+
+    .containerCarrousel{
+        width: 100%;
+    }
+    
+    .subtitleImage{
+        width: 75%;
+    }
+
+    .imageFarm{
+        margin-top: 10%;
+        padding: 50px;        
+        width: 100%;
+    }
+
+    .subtitleImage{
+        width: 140%;
+        height: auto;
+    }
+
+}
+
+@media (max-width:500px) {
+    .titleMain{
+        font-size: 2.5rem;
+    }
+}

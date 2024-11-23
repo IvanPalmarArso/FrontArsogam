@@ -1,0 +1,148 @@
+.containerFormUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    padding-top: 12%;
+    background-image: url('../img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.containerFormLG h1{
+    text-align: center;    
+    color: white;    
+    font-family: "Bella";
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+.containerFormLG p{
+    text-align: center;
+    color: black;  
+    font-size: large;      
+    margin-top: 25px;
+    font-weight: 700;
+}
+
+.containerFormLG{
+    width: 500px;
+    background: rgb(91, 184, 131);
+    padding: 30px;
+    border-radius: 20px;        
+}
+
+.containerButtonSubmit .confirmButtonLG{
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+.containerButtonSubmit .confirmButtonLG:hover{
+    transform: scale(1.05);
+    transition: all ease-in-out 0.5s;
+}
+
+.containerFormUser input{
+    font-size: 0.9rem;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.containerImageContent{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.containerImageContent .inputImage{
+    display: none;
+}
+
+.containerImageContent .imageTitleLabel{
+    font-size: 1.1rem;
+}
+
+.containerImageMedia{
+    margin-top: 20px;
+    text-align: center;    
+}
+
+.containerImageMedia img{
+    width: 90%;
+    height: 30vh;
+}
+
+.containerAddImage{
+    text-align: center;
+}
+
+.containerAddImage .addImageLabel{
+    font-size: 1.1rem;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 2px 2px rgb(171, 171, 171);
+}
+
+.addImageLabel:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.containerGoLG{
+    text-align: end;
+    margin-top: 20px;
+}
+
+.containerGoLG .linkBackLG{
+    opacity: 0.9;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all ease-in 0.3s;
+    font-weight: bold;
+}
+
+.containerGoLG .linkBackLG:hover{
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.containerButtonGoLG{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: tomato;
+    border-radius: 15px;
+    padding: 10px;
+    transition: all ease-in 0.3s;    
+}
+
+.containerButtonGoLG:hover{
+    background-color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.containerButtonGoLG:hover .goBackContainer{
+    color: tomato;    
+}
+
+.goBackContainer{    
+    width: 100%;    
+    font-weight: bold;
+    font-family: "Bella";
+    font-size: 1.1rem;
+    color: white;    
+    text-decoration: none;
+}
+
+@media (max-width : 900px) {
+    .containerFormLG{
+        width: 350px;
+    }
+}

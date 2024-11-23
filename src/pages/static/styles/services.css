@@ -1,0 +1,150 @@
+/*
+    Font Style
+*/
+@font-face {
+    font-family: "Bella";
+    src: url('../fonts/Bella.ttf');
+}
+
+.servicesSection{
+    background-image: url('../img/background.jpeg');
+    padding: 10px;
+    padding-bottom: 100px;
+    padding-top: 8%;
+    width: 100%;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.containerImageServices{
+    text-align: center;
+}
+
+.containerImageServices img{
+    width: 13%;
+}
+
+.containerServices{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.containerInfoService img{
+    width: 520px;
+}
+
+.containerInfoService .imgNro2Ser{
+    width: 560px;
+}
+
+.containerInfoService h2{
+    color: rgb(0, 101, 51);
+    font-family: "Bella";
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.containerModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background: rgb(91, 184, 131);
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.containerIcon{
+    text-align: end;
+}
+
+.iconModal{
+    font-size: 1.5rem;
+}
+
+.iconModal:hover{
+    transition: all ease-in 0.3s;
+    color: white;
+    cursor: pointer;
+}
+
+.motionImage{
+    border-radius: 30px;
+}
+
+.arrowServ{
+    width: 90%;
+    margin-top: -30px;
+    margin-left: 10px;
+}
+
+.arrowServ img{
+    width: 100%;
+}
+
+@media (max-width:1800px) {
+    .servicesSection{
+        padding-top: 12%;
+        background: url('../img/background.jpeg');
+        background-size: contain;        
+        background-repeat: repeat;        
+        background-position: center;    
+    }    
+
+    .containerImageServices img{
+        width: 13%;
+        height: auto;
+    }
+}
+
+@media (max-width:1300px) {
+    .servicesSection{
+        background-image: url('../img/backgroundResponsive.jpeg');
+    }
+}
+
+@media (max-width:900px) {
+    .containerImageServices img{
+        width: 60%;
+    }
+    
+    .servicesSection{
+        padding: 50px;
+    }    
+
+    .containerServices{
+        display: block;
+        margin-top: 0px;
+    }
+
+    .containerInfoService img{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .containerInfoService .imgNro2Ser{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .containerModal{
+        width: 400px;
+    }
+
+    .arrowServ{
+        width: 100%;
+        margin-top: -80px;
+        margin-left: 0px;
+    }
+
+}
+
+@media (max-width:600px) {
+    .containerInfoService h2{
+        font-size: 2rem;
+    }
+}

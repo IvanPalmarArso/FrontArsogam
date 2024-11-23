@@ -1,0 +1,25 @@
+.containerFloat{
+    position: fixed;
+    left: 93%;
+    top: 70%;
+}
+
+.containerLogoFloat{
+    margin-top: 20px;
+}
+
+.imgFloat{
+    width: 85px;
+    filter: drop-shadow(5px 5px 4px gray); 
+}
+
+.containerFloat .imgFloat:hover{
+    transition: all ease-in-out 0.3s;
+    filter: drop-shadow(15px 10px 4px gray);    
+}
+
+@media (max-width: 900px) {
+    .containerFloat{
+        display: none;
+    }
+}

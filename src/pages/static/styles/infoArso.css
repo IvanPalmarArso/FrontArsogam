@@ -1,0 +1,255 @@
+/*
+    font style
+*/
+
+@font-face {
+    font-family: 'Bella';
+    src: url('../fonts/Bella.ttf');
+}
+
+.sectionInfoArso{
+    background-image: url('../img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+    padding-top: 10%;
+    padding-bottom: 80px;
+}
+
+.containerInfoLogo{
+    text-align: center;
+}
+
+.containerInfoLogo img{
+    width: 30%;
+}
+
+.containerSwiper1{    
+    margin-top: 0px;
+}  
+  
+.swiper_container1{
+    height:50rem;
+    position: relative;
+    text-align: center;
+  }
+
+.linkNone{
+    text-decoration: none;
+}
+
+.swiper-slide {
+    width: 20rem;
+    height: 40rem;
+    position: relative;
+}
+  
+@media (max-width: 500px) {
+    .sectionEvents{
+        padding: 30px;
+    }
+    .swiper_container1 {
+      height: 47rem;
+    }
+    .swiper-slide {
+      width: 100% !important;
+      height: 32rem !important;
+    }
+    .swiper-slide img {
+      width: 100% !important;
+      height: 30rem !important;
+    }
+}
+  
+.swiper-slide .imgSwiper {
+    width: 50rem;
+    height: 42rem;
+    border-radius: 2rem;
+    object-fit: fill;
+}
+  
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+    display: none;
+}
+  
+.slider-controler1 {
+    position: relative;
+    bottom: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.slider-controler1 .swiper-button-next{
+    left: 58% !important;
+    transform: translateX(-58%) !important;
+}
+  
+@media (max-width: 990px) {
+    .slider-controler1 .swiper-button-next {
+      left: 70% !important;
+      transform: translateX(-70%) !important;
+    }
+    .sectionEvents{
+        padding: 30px;
+        background: url('../img/backgroundResponsive.jpeg');
+    }
+    .containerSwiper1{
+        margin-top: 50px;
+    }
+
+    .slider-controler1{
+        margin-top: 2%;
+    }
+
+    .sectionEvents{
+        padding-bottom: 90px;
+    }
+}
+  
+@media (max-width:900px) {
+    .slider-controler1{
+        margin-top: -40px;
+    }
+}
+
+@media (max-width: 450px) {
+    .slider-controler1 .swiper-button-next {
+      left: 80% !important;
+      transform: translateX(-80%) !important;
+    }
+  }
+  
+  @media (max-width: 990px) {
+    .slider-controler1 .swiper-button-prev {
+      left: 30% !important;
+      transform: translateX(-30%) !important;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .slider-controler1 .swiper-button-prev {
+      left: 20% !important;
+      transform: translateX(-20%) !important;
+    }
+  }
+  
+.slider-controler1 .slider-arrow {
+    background: var(--white);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    left: 42%;
+    transform: translateX(-42%);
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+  
+.slider-controler1 .slider-arrow ion-icon {
+    font-size: 2rem;
+    color: rgb(0, 101, 51);
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.3s ease-in;
+}
+
+.slider-controler1 .slider-arrow ion-icon:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(0, 101, 51);
+}
+  
+.slider-controler1 .slider-arrow::after {
+    content: '';
+}  
+
+.swiper-pagination1 span{
+    width: 15px;
+    height: 15px;
+}
+
+.containerTextInfo{    
+    text-align: center;
+    padding: 40px;
+    padding-top: 10px;
+}
+
+.containerInfoP p{        
+    color: rgb(0, 101, 51);
+    font-weight: bolder;
+    font-family: 'Bella';
+    font-size: 1.5rem;
+}
+
+.containerModals{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;    
+    margin-top: 80px;
+}
+
+.imageModal{
+    text-align: center;
+}
+
+.imageModal img{
+    width: 150px;      
+    height: 150px;  
+    background-color: rgb(0, 101, 51);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in;
+    opacity: .8;
+}
+
+.imageModal img:hover{
+    background-color: rgb(0, 150, 64);
+    cursor: pointer;
+}
+
+.imageModal h2{
+    margin-top: 30px;
+    color: rgb(0, 101, 51);
+    font-weight: bolder;
+    font-family: 'Bella';
+    font-size: 2rem;
+}
+
+@media (max-width:900px) {
+    .sectionInfoArso{
+        padding: 30px;
+    }
+
+    .containerInfoLogo img{
+        width: 90%;
+    }
+
+    .containerSwiper1{
+        margin-top: -80px;
+        text-align: center;
+    }
+
+    .slider-controler1{
+        bottom: 12rem;
+    }
+
+    .containerModals{
+        flex-direction: column;
+    }
+
+    .containerTextInfo{    
+        text-align: justify;
+    }
+
+    .containerModals{
+        margin-top: 120px;
+        gap: 60px;
+    }
+
+    .containerInfoP{
+        margin-top: -40px;
+    }
+}

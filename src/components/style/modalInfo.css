@@ -1,0 +1,94 @@
+/*
+    Font Style
+*/
+
+@font-face {
+    font-family: "Bella";
+    src: url('../fonts/Bella.ttf');
+}
+
+.containerModalInfo{    
+    border-radius: 10px;
+    border: 2px solid white;        
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;    
+}
+
+.containerMainModal{
+    background: url('../img/background.jpeg');
+	border-radius: 20px;
+	max-width: 100%;
+	margin: 50px auto;	
+	width: 40%;
+    box-shadow: 4px 4px 4px 4px rgb(199, 199, 199);
+}
+
+.containerImageModal{
+    background-color: rgb(0, 150, 64);
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.containerImageModal .imageModalIn{
+    background-color: rgb(0, 150, 64);
+    width: 50%;
+    border-radius: 0;
+}
+
+.containerModalText{
+    padding: 40px;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.containerModalText p{
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.containerButtonCloseModal{
+    padding: 40px;
+    padding-top: 0px;
+}
+
+.containerButtonCloseModal .buttonModalInf{
+    width: 30%;
+    background-color: rgb(0, 150, 64);
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Bella';
+    transition: all 0.3s ease-in;
+    font-size: 1.2rem;
+}
+
+.containerButtonCloseModal .buttonModalInf:hover{
+    color: rgb(0, 150, 64);
+    background-color: white;
+}
+
+@media (max-width:900px) {
+
+    .containerImageModal .imageModalIn{
+        width: 100%;
+    }
+
+    .containerMainModal{
+        width: 90%;
+    }
+
+    .containerModalText{        
+        text-align: justify;
+    }
+
+    .containerButtonCloseModal .buttonModalInf{
+        width: auto;
+    }
+}
