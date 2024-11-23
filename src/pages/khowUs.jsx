@@ -3,7 +3,7 @@ import { useEffect } from "react"
 //Bull Image
 import bullImage from './static/img/knowUs/bullKnowUs.png'
 //Styles
-import './static/styles/KhowUs.css'
+import './static/styles/khowUs.css'
 //FramerMotion
 import {motion} from 'framer-motion'
 //components
