@@ -112,17 +112,17 @@ export const AuthProvider = ({children}) => {
 
     useEffect(() => {
         async function checkLogin () {
-            const cookie = Cookie.get('token')
+            const cookie = Cookies.get('token')
 
             if(!cookie){
                 setIsAuthenticated(false)
-                setLoading(true)
+                setLoading(false)
                 return setUser(null)
             }
 
             try{
 
-                const res = await verifyToken(cookie.token)
+                const res = await verifyToken(cookie)
                 console.log(res.data)
 
                 if(!res.data){
@@ -137,7 +137,7 @@ export const AuthProvider = ({children}) => {
 
             }catch(e){
                 setIsAuthenticated(false)
-                setLoading(true)
+                setLoading(false)
                 setUser(null)
             }
         }
