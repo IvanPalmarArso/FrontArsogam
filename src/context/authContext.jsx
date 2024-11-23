@@ -143,7 +143,7 @@ export const AuthProvider = ({children}) => {
         }
 
         checkLogin()
-    },[])
+    },[user, isAuthenticated])
 
     return(
         <AuthContext.Provider value={{
