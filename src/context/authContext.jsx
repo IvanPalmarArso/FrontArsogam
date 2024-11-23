@@ -108,42 +108,44 @@ export const AuthProvider = ({children}) => {
                 clearTimeout(timer)
             }
         }
-    }, [errorAuth])
-
+    }, [errorAuth])    
+    
     useEffect(() => {
         async function checkLogin () {
-            const cookie = Cookie.get('token')
-
-            if(!cookie){
-                setIsAuthenticated(false)
-                setLoading(true)
-                return setUser(null)
+            const cookie = Cookie.get('token');
+    
+            if (!cookie) {
+                
+                setIsAuthenticated(false);
+                setLoading(false);
+                setUser(null);
+                return;
             }
-
-            try{
-
-                const res = await verifyToken(cookie.token)
-                console.log(res.data)
-
-                if(!res.data){
-                    setIsAuthenticated(false)
-                    setLoading(true)
+    
+            try {                
+                const res = await verifyToken(cookie);
+    
+                if (!res.data) {                    
+                    setIsAuthenticated(false);
+                    setLoading(false);
+                    setUser(null);
                     return;
                 }
-
-                setIsAuthenticated(true)
-                setLoading(false)
-                setUser(res.data)
-
-            }catch(e){
-                setIsAuthenticated(false)
-                setLoading(true)
-                setUser(null)
+                    
+                setIsAuthenticated(true);
+                setLoading(false);
+                setUser(res.data);
+    
+            } catch (e) {                
+                setIsAuthenticated(false);
+                setLoading(false);
+                setUser(null);
             }
         }
-
-        checkLogin()
-    },[user, isAuthenticated])
+    
+        checkLogin();
+    }, []);
+    
 
     return(
         <AuthContext.Provider value={{
