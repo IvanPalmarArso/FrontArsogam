@@ -4,10 +4,8 @@ import apiClient from "./axios";
 //Add Gallery Image
 export const newGallery = (galleryData) => {
     return apiClient.post('https://backarsogam-production.up.railway.app/api/newGallery', galleryData, {
-        headers : {            
-            'Access-Control-Allow-Headers' : "origin,content-type",
-            'Content-Type': 'multipart/form-data',            
-            "Access-Control-Allow-Origin" : "https://arsogam.netlify.app"
+        headers : {                        
+            'Content-Type': 'multipart/form-data',                        
         }
     })
 }
