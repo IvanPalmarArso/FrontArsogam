@@ -7,6 +7,7 @@ export const newGallery = (galleryData) => {
         headers : {
             'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
             'Content-Type': 'application/json',
+            "Access-Control-Allow-Methods": "POST"
         }
     })
 }
