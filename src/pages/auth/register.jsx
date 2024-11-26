@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 import './styles/formLR.css'
 import { useEffect } from "react"
 //Auth Context
-import { useAuth } from "../../context/authContext"
+import { UseAuth } from "../../context/authContext"
 
 function Register(){
 
@@ -19,7 +19,7 @@ function Register(){
 
     const navigate = useNavigate()
 
-    const {registerUserApi, errorAuth, isAuthenticated} = useAuth()
+    const {registerUserApi, errorAuth, isAuthenticated} = UseAuth()
 
     const onSubmit = handleSubmit(async (data) => {                
         registerUserApi(data)              

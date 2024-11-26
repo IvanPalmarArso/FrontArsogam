@@ -4,9 +4,6 @@ import { useEffect, useState } from "react";
 import './static/styles/events.css'
 //Images
 import bullEvents from './static/img/events/bullEvents.png'
-import eventsImage1 from './static/img/events/EventsImageNro1.svg'
-import eventsImage2 from './static/img/events/EventsImageNro2.png'
-import eventsImage3 from './static/img/events/EventsImageNro3.svg'
 //Framer motion
 import { motion } from "framer-motion";
 //Swiper
@@ -20,12 +17,11 @@ import 'swiper/css/navigation';
 //Components
 import { ContactFloat } from "../components/contactFloat";
 //Context Auth
-import { useAuth } from "../context/authContext";
+import { UseAuth } from "../context/authContext";
 //React-router-dom
 import { useNavigate } from "react-router-dom";
 //Events Context
 import { useEvent } from "../context/eventContext";
-import { all } from "axios";
 
 function Events(){
 
@@ -40,7 +36,7 @@ function Events(){
     })       
 
     //Auth Context
-    const {user} = useAuth()
+    const {user} = UseAuth()
 
     const navigate = useNavigate()
 

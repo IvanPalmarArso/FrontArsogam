@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 //Auth Context
-import { useAuth } from "../../context/authContext"
+import { UseAuth } from "../../context/authContext"
 //React-hooks-forms
 import { useForm } from "react-hook-form"
 //Material UI
@@ -18,7 +18,7 @@ function FormUser(){
 
     const {register, handleSubmit, setValue, formState : {errors}} = useForm()
 
-    const {addNewUserApi, updateUserApi, getOneUserApi, errorAuth} = useAuth()
+    const {addNewUserApi, updateUserApi, getOneUserApi, errorAuth} = UseAuth()
 
     const params = useParams()
 

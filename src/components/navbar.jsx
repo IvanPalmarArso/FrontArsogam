@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 //Images
 import logoArsogam from './img/logoArsogam.svg'
 //Auth Context
-import { useAuth } from '../context/authContext'
+import { UseAuth } from '../context/authContext'
 //Style
 import './style/navbar.css'
 import { useEffect } from 'react'
@@ -14,7 +14,7 @@ import Swal from 'sweetalert2'
 
 function Navbar(){
     
-    const {isAuthenticated, user, logoutUserApi} = useAuth()
+    const {isAuthenticated, user, logoutUserApi} = UseAuth()
 
     const navigate = useNavigate()    
 

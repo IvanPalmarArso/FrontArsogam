@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 //Auth Context
-import { useAuth } from "../../context/authContext"
+import { UseAuth } from "../../context/authContext"
 //React-hooks-forms
 import { useForm } from "react-hook-form"
 //Material UI
@@ -15,7 +15,7 @@ function Login(){
 
     const {register, handleSubmit, formState : {errors}} = useForm()
 
-    const {isAuthenticated, errorAuth, loginUserApi} = useAuth()
+    const {isAuthenticated, errorAuth, loginUserApi} = UseAuth()
 
     const onSubmit = handleSubmit(async (values) => {
         loginUserApi(values)

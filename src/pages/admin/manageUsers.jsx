@@ -1,7 +1,7 @@
 //Styles
 import './styles/manageTable.css'
 //AuthContext
-import { useAuth } from "../../context/authContext"
+import { UseAuth } from '../../context/authContext'
 //React-hooks
 import { useEffect, useState } from "react"
 //Icons
@@ -22,7 +22,7 @@ function ManageUser(){
         document.title = 'Gestionar Usuarios'
     }) 
 
-    const {allUsersApi, userList, deleteUserApi, user} = useAuth()
+    const {allUsersApi, userList, deleteUserApi, user} = UseAuth()
 
     useEffect(() => {
         allUsersApi()               

@@ -1,11 +1,11 @@
 //AuthContext
-import { useAuth } from "./context/authContext";
+import { UseAuth } from "./context/authContext";
 //React-hooks
 import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRoutesAdmin(){
 
-    const {user, isAuthenticated} = useAuth()    
+    const {user, isAuthenticated} = UseAuth()    
 
     if(!isAuthenticated && !user?.isAdmin){
         return <Navigate to='/' replace={true}/>

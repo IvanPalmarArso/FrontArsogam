@@ -2,11 +2,11 @@
 import apiClient from "./axios";
 
 export const registerUser = (user) => {
-    return apiClient.post('https://backarsogam-production.up.railway.app/api/register', user)
+    return apiClient.post('http://localhost:3000/api/register', user)
 }
 
 export const loginUser = (user) => {
-    return apiClient.post('https://backarsogam-production.up.railway.app/api/login', user)
+    return apiClient.post('http://localhost:3000/api/login', user)
 }
 
 export const addNewUser = (user) => {
@@ -29,6 +29,6 @@ export const deleteUser = (id) => {
     return apiClient.delete(`https://backarsogam-production.up.railway.app/api/deleteUser/${id}`)
 }
 
-export const verifyToken = () => {
-    return apiClient.get('https://backarsogam-production.up.railway.app/api/verify')
+export const VerifyToken = () => {
+    return apiClient.get('http://localhost:3000/api/verify')
 }

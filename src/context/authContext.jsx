@@ -1,14 +1,14 @@
 //React-Hooks-context
 import {createContext, useContext, useEffect, useState } from "react";
 //Methods
-import { registerUser, verifyToken, loginUser, getOneUser, addNewUser, allUsers, deleteUser, updateUser} from "../api/user.api";
+import { registerUser, VerifyToken, loginUser, getOneUser, addNewUser, allUsers, deleteUser, updateUser} from "../api/user.api";
 //Cookies
 import Cookie from 'js-cookie'
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
 
-export const useAuth = () => {
+export const UseAuth = () => {
     const context = useContext(AuthContext)
 
     if(!context){
@@ -111,40 +111,31 @@ export const AuthProvider = ({children}) => {
     }, [errorAuth])    
     
     useEffect(() => {
-        async function checkLogin () {
-            const cookie = Cookie.get('token');
-    
-            if (!cookie) {
-                
-                setIsAuthenticated(false);
-                setLoading(false);
-                setUser(null);
-                return;
+        async function loadSing(){            
+            const cookie = Cookie.get()
+            
+            if(!cookie){
+                setIsAuthenticated(false)
+                return setUser(null)                
             }
-    
-            try {                
-                const res = await verifyToken(cookie.token);
-    
-                if (!res.data) {                    
-                    setIsAuthenticated(false);
-                    setLoading(false);
-                    setUser(null);
-                    return;
+            try{
+                const res = await VerifyToken(cookie.token)
+
+                if(!res.data){
+                    setIsAuthenticated(false)
+                    setUser(null)
+                    return
                 }
-                    
-                setIsAuthenticated(true);
-                setLoading(false);
-                setUser(res.data);
-    
-            } catch (e) {                
-                setIsAuthenticated(false);
-                setLoading(false);
-                setUser(null);
+                setIsAuthenticated(true)
+                setUser(res.data)
+            }catch(e){
+                setIsAuthenticated(false)
+                setUser(null)
             }
-        }
-    
-        checkLogin();
-    }, []);
+            
+        }        
+        loadSing()
+    },[]);
     
 
     return(
