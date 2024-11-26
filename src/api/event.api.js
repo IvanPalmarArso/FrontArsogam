@@ -39,5 +39,10 @@ export const getOneEvent = (id) => {
 }
 //Get All Events
 export const allEvent = () => {
-    return apiClient.get('https://backarsogam-production.up.railway.app/api/allEvents')
+    return apiClient.get('https://backarsogam-production.up.railway.app/api/allEvents',{
+        headers : {
+            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
+            'Content-Type': 'application/json',
+        }
+    })
 }

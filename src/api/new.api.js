@@ -43,5 +43,10 @@ export const getOneNew = (id) => {
 
 //Get All News
 export const allNews = () => {
-    return apiClient.get('https://backarsogam-production.up.railway.app/api/allNews')
+    return apiClient.get('https://backarsogam-production.up.railway.app/api/allNews',{
+        headers : {
+            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
+            'Content-Type': 'application/json',
+        }
+    })
 }
