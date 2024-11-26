@@ -119,7 +119,7 @@ function FormEvents(){
                     Bienvenido Administrador, ingresa los datos de el nuevo evento a ingresar.
                 </p>
 
-                <form className="formTecnic1" onSubmit={onSubmit}>
+                <form className="formTecnic1" onSubmit={onSubmit} encType="multipart/form-data">
                     <input type="text"
                     {...register('nameEvent',{
                         required: true,

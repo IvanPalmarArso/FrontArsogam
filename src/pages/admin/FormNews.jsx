@@ -122,7 +122,7 @@ function FormNews(){
                     Bienvenido Administrador, ingresa los datos de la nueva noticia.
                 </p>
 
-                <form className="formTecnic1" onSubmit={onSubmit}>
+                <form className="formTecnic1" onSubmit={onSubmit} encType="multipart/form-data">
                     <input type="text" 
                     {...register('newName',{
                         required: true,

@@ -116,7 +116,7 @@ function FormGallery(){
                     Bienvenido adminsitrador, ingresa la información de la imagen que vas a ingresar.
                 </p>
 
-                <form onSubmit={onSubmit} className="formTecnic1">
+                <form onSubmit={onSubmit} className="formTecnic1" encType="multipart/form-data">
                     <input type="text"
                     autoFocus = {true}
                     {...register('nameImage', {
