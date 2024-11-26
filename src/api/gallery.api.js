@@ -30,11 +30,7 @@ export const deleteGallery = (id) => {
 
 //Get One Gallery Image
 export const getOneGallery = (id) => {
-    return apiClient.get(`https://backarsogam-production.up.railway.app/api/getOneGallery/${id}`,{
-        headers : {            
-            'Content-Type': 'application/json',
-        }
-    })
+    return apiClient.get(`https://backarsogam-production.up.railway.app/api/getOneGallery/${id}`)
 }
 
 //Get all Gallery Images
