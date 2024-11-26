@@ -59,8 +59,10 @@ function FormGallery(){
         const formValue = new FormData()
 
         formValue.append('nameImage', data.nameImage)
-        
-        formValue.append('galleryImage', data.galleryImage)        
+
+        for(let i = 0; i < imageGall.length; i ++){
+            formValue.append('galleryImage', imageGall[i])
+        }
 
         if(params.id){
             Swal.fire({
