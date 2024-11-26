@@ -4,26 +4,23 @@ import apiClient from "./axios";
 //Add Event
 export const newEvent = (data) => {
     return apiClient.post('https://backarsogam-production.up.railway.app/api/newEvent', data, {
-        headers : {
-            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
-            'Content-Type': 'application/json',
+        headers : {            
+            'Content-Type': 'multipart/form-data',            
         }
     })
 }
 //Update Event
 export const updateEvent = (id, data) => {
     return apiClient.put(`https://backarsogam-production.up.railway.app/api/updateEvent/${id}`, data, {
-        headers : {
-            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
-            'Content-Type': 'application/json',
+        headers : {            
+            'Content-Type': 'multipart/form-data',            
         }
     })
 }
 //Delete Event
 export const deleteEvent = (id) => {
     return apiClient.delete(`https://backarsogam-production.up.railway.app/api/deleteEvent/${id}`, {
-        headers : {
-            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
+        headers : {            
             'Content-Type': 'application/json',
         }
     })
@@ -31,8 +28,7 @@ export const deleteEvent = (id) => {
 //Get One Event
 export const getOneEvent = (id) => {
     return apiClient.get(`https://backarsogam-production.up.railway.app/api/getOneEvent/${id}`,{
-        headers : {
-            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
+        headers : {            
             'Content-Type': 'application/json',
         }
     })
@@ -40,8 +36,7 @@ export const getOneEvent = (id) => {
 //Get All Events
 export const allEvent = () => {
     return apiClient.get('https://backarsogam-production.up.railway.app/api/allEvents',{
-        headers : {
-            'Access-Control-Allow-Origin': 'https://arsogam.netlify.app',
+        headers : {            
             'Content-Type': 'application/json',
         }
     })
