@@ -40,7 +40,7 @@ export const getOneGallery = (id) => {
 //Get all Gallery Images
 export const getAllGallery = () => {
     return apiClient.get('https://backarsogam-production.up.railway.app/api/allGallery',{
-        headers : {            
+        headers : {        
             'Content-Type': 'application/json',
         }
     })
