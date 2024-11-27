@@ -58,11 +58,11 @@ function FormGallery(){
     const onSubmit = handleSubmit(async (data) => {
         const formValue = new FormData()
 
-        formValue.append('nameImage', data.nameImage)
+        /*formValue.append('nameImage', data.nameImage)
 
         for(let i = 0; i < imageGall.length; i ++){
             formValue.append('galleryImage', imageGall[i])
-        }
+        }*/
 
         if(params.id){
             Swal.fire({
