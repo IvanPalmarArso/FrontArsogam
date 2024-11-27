@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 //React-router-dom
 import { useNavigate } from 'react-router-dom'
 //Images
-import logoArsogam from './img/logoArsogam.svg'
+import logoArsogam from './img/logoArsogam.png'
 //Auth Context
 import { UseAuth } from '../context/authContext'
 //Style
