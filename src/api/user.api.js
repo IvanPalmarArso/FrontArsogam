@@ -13,6 +13,10 @@ export const addNewUser = (user) => {
     return apiClient.post('https://backarsogam-production.up.railway.app/api/addNewUser', user)
 }
 
+export const logOut = () => {
+    return apiClient.post('https://backarsogam-production.up.railway.app/api/logout')
+}
+
 export const allUsers = () => {
     return apiClient.get('https://backarsogam-production.up.railway.app/api/allUsers')
 }

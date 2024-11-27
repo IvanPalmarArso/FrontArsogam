@@ -1,7 +1,7 @@
 //React-Hooks-context
 import {createContext, useContext, useEffect, useState } from "react";
 //Methods
-import { registerUser, VerifyToken, loginUser, getOneUser, addNewUser, allUsers, deleteUser, updateUser} from "../api/user.api";
+import { registerUser, VerifyToken, loginUser, logOut, getOneUser, addNewUser, allUsers, deleteUser, updateUser} from "../api/user.api";
 //Cookies
 import Cookie from 'js-cookie'
 import Cookies from "js-cookie";
@@ -49,11 +49,15 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    const logoutUserApi = () => {
-        Cookies.remove('token')
-        Cookies.remove('token')
-        setIsAuthenticated(false)
-        setUser(null)
+    const logoutUserApi = async () => {
+        try{
+            const res = await logOut()
+            console.log(res)
+            setIsAuthenticated(false)
+            setUser(null)
+        }catch(err){
+            console.log(err.response.data)
+        }     
     }
 
     const addNewUserApi = async (user) => {
