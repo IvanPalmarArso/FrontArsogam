@@ -72,7 +72,7 @@ function FormGallery(){
                 confirmButtonText : 'Siguiente',
                 text : 'La imagen de la galeria ha sido actualizada correctamente.'
             })
-            updateGalleryApi(params.id, formValue)
+            updateGalleryApi(params.id, data)
             navigate('/manageGallery')
         }else{
             Swal.fire({
@@ -82,7 +82,7 @@ function FormGallery(){
                 confirmButtonText : 'Siguiente',
                 text : 'La imagen se ha añadido correctamente a la galeria'
             })
-            newGalleryApi(formValue)
+            newGalleryApi(data)
             navigate('/manageGallery')
         }
     })
