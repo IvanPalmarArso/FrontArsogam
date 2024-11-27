@@ -51,6 +51,7 @@ export const AuthProvider = ({children}) => {
 
     const logoutUserApi = () => {
         Cookies.remove('token')
+        Cookies.remove('token')
         setIsAuthenticated(false)
         setUser(null)
     }
