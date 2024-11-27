@@ -58,11 +58,11 @@ function FormGallery(){
     const onSubmit = handleSubmit(async (data) => {
         const formValue = new FormData()
 
-        /*formValue.append('nameImage', data.nameImage)
+        formValue.append('nameImage', data.nameImage)
 
         for(let i = 0; i < imageGall.length; i ++){
             formValue.append('galleryImage', imageGall[i])
-        }*/
+        }
 
         if(params.id){
             Swal.fire({
@@ -72,7 +72,7 @@ function FormGallery(){
                 confirmButtonText : 'Siguiente',
                 text : 'La imagen de la galeria ha sido actualizada correctamente.'
             })
-            updateGalleryApi(params.id, data)
+            updateGalleryApi(params.id, formValue)
             navigate('/manageGallery')
         }else{
             Swal.fire({
@@ -82,7 +82,7 @@ function FormGallery(){
                 confirmButtonText : 'Siguiente',
                 text : 'La imagen se ha añadido correctamente a la galeria'
             })
-            newGalleryApi(data)
+            newGalleryApi(formValue)
             navigate('/manageGallery')
         }
     })
