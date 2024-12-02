@@ -90,19 +90,25 @@
         padding-top: 23%;
     }
     .containerCarrousel{
-        padding-top: 6%;        
+        padding-top: 5.5%;        
     }
 }
 
 @media (max-width : 1500px) {
     .containerCarrousel{
-        padding-top: 10%;
+        padding-top: 6%;
     }
 }
 
 @media (max-width:1400px) {
     .containerCarrousel{
-        padding-top: 11%;
+        padding-top: 6.5%;
+    }
+    .titleMain{
+        font-size: 4rem;
+    }
+    .subtitleMain{
+        font-size: 1.6rem;
     }
 }
 

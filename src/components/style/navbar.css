@@ -101,8 +101,19 @@
         margin-left: 10px;
     }    
 
-    .linkNav{
-        font-size: 1.3rem;
+    .linkNav, .logOutLink{
+        font-size: 1.1rem;
+    }
+
+    .containerImage img{
+        width: 380px;
+        height: 200px;
+    }
+}
+
+@media (max-width : 1400px) {
+    .linkNav, .logOutLink{
+        font-size: 0.9rem;
     }
 }
 
@@ -130,13 +141,13 @@
     }
 
     .containerImage img{
-        width: 80%;
+        width: 60%;
         height: 100%;
     }
 
     .linkNav{
         font-size: 1.5rem;
-    }    
+    }        
 }
 
 @media (max-width:500px) {
