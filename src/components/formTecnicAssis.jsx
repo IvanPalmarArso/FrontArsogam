@@ -8,23 +8,28 @@ import Alert from '@mui/material/Alert';
 //Form Method
 import { postTecnicAssistance } from '../api/sendEmail';
 import { useEffect } from 'react';
+//React-router-dom
+import { useNavigate } from 'react-router-dom';
+//Sweetalert
+import Swal from 'sweetalert2';
 
 const FormTecnicAssis = ({onRequestClose}) =>{
 
-    const {register, handleSubmit, formState : {errors}} = useForm()
+    const {register, handleSubmit, formState : {errors}} = useForm()    
 
-    const refreshPage = () => {    
-        window.location.reload()   
-    }
+    const navigate = useNavigate()
 
-    const onSubmitForm = handleSubmit((data) => {
-        const validData = {
-            ...data
-        }        
+    const onSubmitForm = handleSubmit((data) => {        
 
-        postTecnicAssistance(validData)        
-        refreshPage()    
-
+        postTecnicAssistance(data)        
+        navigate('/')
+        Swal.fire({
+            title : 'Solicitud Enviada',
+            text : 'Tu solicitud ha sido enviada correctamente.',
+            confirmButtonText : 'Siguiente',
+            confirmButtonColor : '#3ed634',
+            icon : 'success'
+        })
     })
 
     useEffect(() => {
