@@ -58,7 +58,7 @@ export default function FormPQR(){
             Swal.fire({
                 icon: "info",
                 title: "Oops...",
-                text: "El asunto de la petición debe de tener almenos.",               
+                text: "El asunto de la petición debe de tener almenos 20 caracteres.",               
                 confirmButtonColor : "#17c5e4",
                 confirmButtonText : "Siguiente"
             });
