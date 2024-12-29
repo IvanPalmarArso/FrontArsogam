@@ -7,11 +7,14 @@ import './static/styles/infoArso.css'
 import { motion } from 'framer-motion'
 //Images
 import logoInfoArso from './static/img/infoArso/logoInfoArso.svg'
-import imageArso from './static/img/infoArso/imgInfoArso.svg'
 import visionImage from './static/img/infoArso/visionImage.svg'
 import valuesImage from './static/img/infoArso/valuesImage.svg'
 import politicsImage from './static/img/infoArso/politicsImage.svg'
 import galleryIcon from './static/img/infoArso/galleryIcon.svg'
+//Videos
+import firstVideo from './static/img/infoArso/firstVideo.mp4'
+import secondVideo from './static/img/infoArso/secondVideo.mp4'
+import thirdVideo from './static/img/infoArso/thirdVideo.mp4'
 //Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -104,17 +107,17 @@ function InfoArso(){
                     className="swiper_container1"
                 >
                     <SwiperSlide className='swiperSlide'>
-                        <img className='imgSwiper' src={imageArso} alt="slide_image" />
+                        <video className='imgSwiper' src = {firstVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='imgSwiper' src={imageArso} alt="slide_image" />
+                        <video className='imgSwiper' src = {secondVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='imgSwiper' src={imageArso} alt="slide_image" />
-                    </SwiperSlide>
+                        <video className='imgSwiper' src = {thirdVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
+                    </SwiperSlide>                    
                     <SwiperSlide>
-                        <img className='imgSwiper' src={imageArso} alt="slide_image" />
-                    </SwiperSlide>
+                        <video className='imgSwiper' src = {thirdVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
+                    </SwiperSlide>            
 
                     <div className="slider-controler1">
                     <div className="swiper-button-prev slider-arrow">

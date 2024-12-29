@@ -73,8 +73,9 @@
 }
 
 .containerSingleEvent img{
+    object-fit:fill;
     width: 80%;
-    height: 70vh;
+    height: 65vh;    
 }
 
 .containerSingleEvent p{
@@ -89,20 +90,20 @@
     .containerSingleEvent{
         padding: 10px;
         background-color: white;
-        border-radius: 50px;
-        margin-top: -10px;
+        border-radius: 50px;        
     }
 
     .containerSingleEvent .singleEventImg{
-        height: 30vh;
+        height: 50vh;
     }
 }
   
 @media (max-width: 990px) {
     .slider-controler .swiper-button-next {
-      left: 70% !important;
+      left: 80% !important;
       transform: translateX(-70%) !important;
-    }
+    }    
+
     .sectionEvents{
         padding: 30px;
         background: url('../img/backgroundResponsive.jpeg');
@@ -149,7 +150,7 @@
   
   @media (max-width: 990px) {
     .slider-controler .swiper-button-prev {
-      left: 30% !important;
+      left: 20% !important;
       transform: translateX(-30%) !important;
     }
   }

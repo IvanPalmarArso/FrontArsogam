@@ -39,6 +39,11 @@
     width: 560px;
 }
 
+.infoImage{
+    color: rgb(0, 101, 51);
+    font-family: "Bella";
+}
+
 .containerInfoService h2{
     color: rgb(0, 101, 51);
     font-family: "Bella";

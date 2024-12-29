@@ -12,6 +12,8 @@ import {motion} from 'framer-motion'
 //Components
 import FormTecnicAssis from '../components/formTecnicAssis'
 import { ContactFloat } from "../components/contactFloat";
+//Icons
+import { CiCirclePlus } from "react-icons/ci";
 
 function Services(){
         
@@ -28,7 +30,7 @@ function Services(){
     return(
         <section className="servicesSection" id="sectionService">
             <ContactFloat />
-            <div className="containerImageServices">                
+            <div className="containerImageServices">                                
                 <motion.div
                     initial = {{scale : 0}}
                     animate = {{rotate : 360, scale : 1}}
@@ -38,7 +40,7 @@ function Services(){
                         damping : 90
                     }}
                 >
-                    <img src = {bullServices} alt = "bullServices"/>
+                    <img src = {bullServices} alt = "bullServices"/>                    
                 </motion.div>
             </div>
 
@@ -61,6 +63,11 @@ function Services(){
                     <h2>
                         Asistencia T<span className="tildesFont">é</span>cnica
                     </h2>                    
+
+                    <p className="infoImage">
+                        (Dar click en la imagen para conocer m<span className="tildesFont">á</span>s)
+                    </p> 
+
                     <div className="arrowServ">
                         <motion.div
                             initial = {{
@@ -98,7 +105,12 @@ function Services(){
                     </motion.div>
                     <h2>
                         Capacitaciones
-                    </h2>
+                    </h2>                    
+                    
+                    <p className="infoImage">
+                        (Dar click en la imagen para conocer m<span className="tildesFont">á</span>s)
+                    </p> 
+
                     <div className="arrowServ">
                         <motion.div
                             initial = {{

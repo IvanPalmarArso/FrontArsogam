@@ -1,21 +1,53 @@
 //React-Hooks
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 //Styles
 import './static/styles/main.css'
 //Components
 import CarouselHome from "../components/Slider"
 //Images
 import imgFarm from './static/img/knowFarm.svg'
+//EvetnContext
+import { useEvent } from "../context/eventContext"
 //FramerMotion
 import { motion } from "framer-motion"
 //React Navigation
 import { Link } from "react-router-dom"
+//SweetAlert
+import Swal from 'sweetalert2'
 
 function Home(){
 
+    const {eventList, allEventsApi} = useEvent()
+    const [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        allEventsApi()        
+    },[allEventsApi])    
+
     useEffect(() => {
         document.title = "Pagina Principal"
-    })
+
+        if(eventList.length > 0 && !loaded){
+            const lastEvent = eventList.slice(-1)[0]                           
+
+            Swal.fire({
+                title : 'Próximo Evento',
+                text : lastEvent.nameEvent,
+                imageUrl : lastEvent.imageEvent,
+                imageHeight : 350,    
+                imageWidth : 320,
+                showCloseButton : true,
+                confirmButtonColor : 'green',
+                confirmButtonText : 'CONTINUAR',
+                allowEscapeKey : false,
+                allowOutsideClick : false
+            });
+            
+            setLoaded(true)
+
+        }        
+    
+    },[eventList, loaded])
 
     return (        
         <section className="sectionHome">

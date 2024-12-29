@@ -56,15 +56,21 @@
       width: 100% !important;
       height: 32rem !important;
     }
-    .swiper-slide img {
-      width: 100% !important;
-      height: 30rem !important;
-    }
+    .swiper-slide video {
+        margin-top: 110px !important;
+        width: 100% !important;
+        height: 30rem !important;
+    }    
+    .slider-controler1 {
+        top: -60px;
+    }    
+
 }
   
 .swiper-slide .imgSwiper {
-    width: 50rem;
-    height: 42rem;
+    margin-top: 90px;
+    width: 45rem;
+    height: 30rem;
     border-radius: 2rem;
     object-fit: fill;
 }
@@ -76,7 +82,7 @@
   
 .slider-controler1 {
     position: relative;
-    bottom: 8rem;
+    bottom: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;

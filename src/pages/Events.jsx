@@ -103,7 +103,7 @@ function Events(){
                                 return(
                                     <SwiperSlide>
                                         <div className="containerSingleEvent" key={event.imageEvent}>
-                                            <div>
+                                            <div className="containerImageEvent">
                                                 <img className="singleEventImg" src={event.imageEvent} alt="Event Image" />
                                             </div>
                                             <div>
