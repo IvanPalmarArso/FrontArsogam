@@ -50,7 +50,24 @@ function Home(){
     },[eventList, loaded])
 
     return (        
-        <section className="sectionHome">
+        <>
+        <head>
+
+            <meta name="keywords" content="Arsogam, ARSOGAM, Asociacion Regenerativa Arsogam" />
+
+            <meta name="description" content="La Asociación Regenerativa y Sostenible de GANADEROS en la AMAZONIA ARSOGAM, 
+            tiene como  objetivo promover y difundir modelos de ganadería a gran escala en 
+            las regiones, basadas en prácticas regenerativas que promueven el mejoramiento 
+            del suelo, la protección del medio ambiente, la conservación de la selva y el 
+            bienestar animal. Con ello logrando generar un impacto positivo tanto a nivel 
+            social como ambiental.  
+            A su vez, la asociación fomenta la colaboración entre ganaderos, instituciones y 
+            organizaciones no solo a nivel nacional si no internacional, para avanzar hacia 
+            un modelo de desarrollo sostenible y resiliente en las regiones." />
+        </head>
+
+        <section className="sectionHome">            
+
             <div className="containerInfoHome">                
                 <div className="containerTitle">
                     <motion.div
@@ -83,7 +100,8 @@ function Home(){
             <div className="containerCarrousel">
                 <CarouselHome />
             </div>                    
-        </section>        
+        </section>  
+        </>      
     )
 }
 

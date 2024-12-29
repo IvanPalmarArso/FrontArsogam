@@ -28,7 +28,22 @@ function Services(){
     }
 
     return(
+        <>
+
+        <head>
+            
+            <meta name="keywords" content="Servicios de Arsogam, Arsogam y sus Servicios, Arsogam Servicios" />
+
+            <meta name="description" 
+            content="
+                Podras visualizar todos los servicios que la asociacion regenerativa Arsogam
+                tiene para ofrecer tanto para las capacitaciones como para la asistencia tecnica para los
+                usuarios interesados que cuenten o no cuenten con experiencia.
+            " />
+        </head>
+        
         <section className="servicesSection" id="sectionService">
+
             <ContactFloat />
             <div className="containerImageServices">                                
                 <motion.div
@@ -136,7 +151,7 @@ function Services(){
                 </div>
             </div>        
         </section>
-        
+        </>        
     )
 
 }

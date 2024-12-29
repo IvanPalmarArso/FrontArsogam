@@ -54,7 +54,18 @@ function Events(){
     },[eventList])
 
     return (
-        <section className="sectionEvents">
+        <>
+        <head>
+            <meta name="keywords" content="Eventos de Arsogam, Arsogam Eventos" />
+
+            <meta name="description" 
+            content="
+                Tendras información especifica sobre todos los diferentes eventos en los que ha participado la asociación
+                regenerativa y los eventos que se llevaran a cabo en dias futuros o proximos que seran de grann relevancia.
+            " />
+        </head>
+
+        <section className="sectionEvents">            
             <ContactFloat />
             <div className="containerEventsLogo">
                 <motion.div
@@ -129,6 +140,7 @@ function Events(){
                 </Swiper>    
             </div>
         </section>
+        </>
     )
 
 }

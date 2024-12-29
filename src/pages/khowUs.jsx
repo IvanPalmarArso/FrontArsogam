@@ -16,7 +16,18 @@ function KhowUs(){
     })
 
     return(
-        <section className="sectionKhowUs">       
+        <>
+        <head>
+            <meta name="keywords" content="Noticias de Arsogam, Arsogam Noticias" />
+
+            <meta name="description" 
+            content="
+                En esta pagina es donde se podran visualizar todas las noticias que sean relevantes
+                y que tengan relacion con la ganaderia regenerativa Arsogam.
+            " />
+        </head>
+
+        <section className="sectionKhowUs">               
             <ContactFloat />
             <div className="containerKhowUsLogo">
                 <motion.div
@@ -80,6 +91,7 @@ function KhowUs(){
                 </p>
             </div>
         </section>
+        </>
     )
 }
 

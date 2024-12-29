@@ -61,6 +61,16 @@ function InfoArso(){
     }
 
     return (
+        <>
+                <head>
+            <meta name="keywords" content="Informacion de Arsogam, Arsogam Informacion, Información de Arsogam, Arsogam Información" />
+
+            <meta name="description" 
+            content="
+                Se enlista información crucial con los videos informativos de la asociación regenerativa Arsogam, la misión, la visión y la galeria de
+                imagenes de la asociación.
+            " />
+        </head>
         <section className='sectionInfoArso'>
             <ContactFloat />
             <div className='containerInfoLogo'>
@@ -176,6 +186,7 @@ function InfoArso(){
             </div>
 
         </section>
+        </>
     )
 }
 

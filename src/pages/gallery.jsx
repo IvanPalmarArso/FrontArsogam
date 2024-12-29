@@ -25,7 +25,19 @@ export function GalleryArso(){
     },[])
 
     return(
-        <section className="sectionGallery">
+        <>
+        <head>
+            <meta name="keywords" content="Galeria de Arsogam, Arsogam Galeria" />
+
+            <meta name="description" 
+            content="
+                En la galeria de imagenes de Arsogam se podran ver todas las fotografias que muestran los diferentes apartados 
+                con los que cuenta la asociación regenerativa Arsogam.
+            " />
+        </head>
+
+        <section className="sectionGallery">            
+
             <ContactFloat />
 
             <div className="containerGalleryLogo">
@@ -57,5 +69,6 @@ export function GalleryArso(){
             </div>
 
         </section>
+        </>
     )
 }
