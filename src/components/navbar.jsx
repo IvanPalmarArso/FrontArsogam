@@ -41,6 +41,9 @@ function Navbar(){
                     <li>
                         <Link className='linkNav' to = '/manageGallery' >Galeria</Link>
                     </li>                    
+                    <li>
+                        <Link className='linkNav' to='/manageInfo'>Ganaderia</Link>
+                    </li>
                 </ul>    
                 :
                 <ul>

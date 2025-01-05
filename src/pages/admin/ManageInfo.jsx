@@ -1,47 +1,48 @@
 //Styles
 import './styles/manageTable.css'
-//New Context
-import { useNew } from "../../context/newContext"
+//
+
 //React-hooks
 import { useEffect } from 'react'
 //Icons
-import {RxUpdate} from 'react-icons/rx'
-import {MdDelete} from 'react-icons/md'
+import { RxUpdate } from 'react-icons/rx'
+import { MdDelete } from 'react-icons/md'
 //React-router-dom
-import {Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 //SweetAlert
 import Swal from 'sweetalert2'
+//InfoContext
+import { useInfo } from '../../context/infoContext'
 
-function ManageNews(){
+function ManageInfo(){
 
-    const {allNewsApi, newList, deleteNewApi} = useNew()
+    const {infoList, getAllInfoApi, deleteInfoApi} = useInfo()
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        allNewsApi()
-    },[newList])
+        getAllInfoApi()
+    },[infoList])
 
     useEffect(() => {
-        document.title = 'Gestionar Noticias'
-    },[])
+        document.title = 'Gestionar Ganaderia'
+    })
 
-    return (
+    return(
         <div className='sectionManageAdmin'>
             <h1>
-                Administraci<span className='tildesFont'>ó</span>n de Noticias
+                Administraci<span className='tildesFont'>ó</span>n de la Ganader<span className='tildesFont'>í</span>a
             </h1>
+            
             <p>
-                Bienvenido usuario administrador, en este apartado de gestión de las noticias 
-                te encontraras con la posibilidad de realizar operaciones con las noticias que vayan a
-                ser parte del aplicativo, aquí se tendrá la opción de agregar una nueva noticia con su título, imagen y descripción, se visualizarán todas las diferentes noticias que existen y se ingresaron al aplicativo, 
-                se pondrán actualizar las noticias ya existentes con su información correspondiente además de poder eliminar
-                una noticia en específico que ya no vaya a ser parte del aplicativo.
+                Bienvenido usuario administrador, en este apartado tendras la posibilidad de gestionar todos los videos
+                que van en la seccion de la ganaderia regenerativa Arsogam, podras crear o añadir nuevos videos a la ganaderia, actualizar un video ya existente,
+                eleminar un video ya existente y por ultimo visualizar todos los videos que hacen parte de la ganaderia regenerativa Arsogam.
             </p>
 
             <div className='containerAddNewManage'>
-                <Link className='addManage' to='/addNew'>
-                    A<span className='tildesFont'>ñ</span>adir Noticia
+                <Link className='addManage' to='/addInfo'>
+                    A<span className='tildesFont'>ñ</span>adir Video
                 </Link>
             </div>
 
@@ -52,36 +53,36 @@ function ManageNews(){
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Nombre de la Noticia</th>
-                                        <th>Descripci<span className='tildesFont'>ó</span>n de la Noticia</th>
-                                        <th>Imagen de la noticia</th>
+                                        <th>Video de Ganader<span>í</span>a</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {
-                                        newList.map((news) => {
+                                        infoList.map((itemInfo) => {
                                             return(
-                                                <tr key={news.id}>
-                                                    <td data-label = 'Nombre - Noticia'>{news.newName}</td>
-                                                    <td data-label = 'Descripción - Noticia' >{news.textNew.slice(0, 255)}...</td>
-                                                    <td data-label = 'Imagen - Noticia' className='containerTableImage'>
-                                                        <img src={news.imageNew} alt="Notice Image" />
+                                                <tr key={itemInfo.id}>
+                                                    <td data-label = 'Video' className='containerTableImage'>
+                                                        <video src={itemInfo.infoVideo}
+                                                            controls = {true}
+                                                            autoPlay = {true}
+                                                            muted = {true}
+                                                        ></video>
                                                     </td>
                                                     <td data-label = 'Opciones'>
-                                                        <Link to={`/updateNews/${news.id}`}>
-                                                            <RxUpdate className='options clientUpdate' />
+                                                        <Link to={`/updateInfo/${itemInfo.id}`}>
+                                                            <RxUpdate className='options clientUpdate'/>
                                                         </Link>
 
                                                         <Link>
                                                             <MdDelete className='options clientDelete' onClick={() => {
-                                                                const deleteNew = Swal.mixin({
+                                                                const deleteInfo = Swal.mixin({
 
                                                                 })
 
-                                                                deleteNew.fire({
-                                                                    title : 'Eliminar Noticia',
-                                                                    text : 'Estas seguro de eliminar la noticia seleccionada?',
+                                                                deleteInfo.fire({
+                                                                    title : 'Eliminar Video',
+                                                                    text : 'Estas seguro de eliminar el video seleccionado?',
                                                                     icon : 'warning',
                                                                     showCloseButton : true,
                                                                     showCancelButton : true,
@@ -92,21 +93,20 @@ function ManageNews(){
                                                                     cancelButtonColor : '#3ed634'
                                                                 }).then((result) => {
                                                                     if(result.isConfirmed){
-                                                                        deleteNewApi(news.id)
-
-                                                                        deleteNew.fire({
-                                                                            title : 'Noticia Eliminada',
-                                                                            text : 'La noticia ha sido eliminada correctamente.',
+                                                                        deleteInfoApi(itemInfo.id)
+                                                                        deleteInfo.fire({
+                                                                            title : 'Video Eliminado',
+                                                                            text : 'El video ha sido eliminado correctamente.',
                                                                             icon : 'success',
                                                                             confirmButtonColor : '#3ed634',
                                                                             confirmButtonText : 'Siguiente'
                                                                         })
-
                                                                         navigate('/')
-                                                                    }else if(result.dismiss === Swal.DismissReason.cancel){
-                                                                        deleteNew.fire({
+                                                                    }
+                                                                    else if(result.dismiss === Swal.DismissReason.cancel){
+                                                                        deleteInfo.fire({
                                                                             title : 'Operación Cancelada',
-                                                                            text : 'La noticia no sera eliminada',
+                                                                            text : 'La noticia no ser eliminada',
                                                                             icon : 'info',
                                                                             confirmButtonColor : '#3ed634',
                                                                             confirmButtonText : 'Cancelar'
@@ -126,8 +126,9 @@ function ManageNews(){
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
 
-export default ManageNews
+export default ManageInfo

@@ -32,7 +32,7 @@ function ManageEvents(){
     return(
         <div className='sectionManageAdmin'>
             <h1>
-                Administraci<span>ó</span>n de Eventos
+                Administraci<span className='tildesFont'>ó</span>n de Eventos
             </h1>
             <p>
                 Bienvenido usuario administrador, en este apartado de gestión de eventos, podrás con el rol de 

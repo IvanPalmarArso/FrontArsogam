@@ -141,6 +141,11 @@
     text-decoration: none;
 }
 
+.infoVideoClass{
+    width: 100%;
+    height: 25vh;
+}
+
 @media (max-width : 900px) {
     .containerFormLG{
         width: 350px;

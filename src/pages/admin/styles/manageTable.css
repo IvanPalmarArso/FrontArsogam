@@ -98,14 +98,14 @@
     text-align: center;
 }
 
-.containerTableImage img{ 
+.containerTableImage img, video{ 
     width: 70%;
     height: 25vh;
     border-radius: 15px;
     transition: all ease-in-out 0.3s;
 }
 
-.containerTableImage img:hover{
+.containerTableImage img,video:hover{
     transform: scale(1.05);
     cursor: pointer;
 } 
@@ -254,7 +254,7 @@
         background-color: rgb(91, 184, 131);
     }
     
-    .containerTableImage img{
+    .containerTableImage img, video{
         width: 30px;
         height: 30px;
     }

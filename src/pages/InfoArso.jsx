@@ -15,6 +15,8 @@ import galleryIcon from './static/img/infoArso/galleryIcon.svg'
 import firstVideo from './static/img/infoArso/firstVideo.mp4'
 import secondVideo from './static/img/infoArso/secondVideo.mp4'
 import thirdVideo from './static/img/infoArso/thirdVideo.mp4'
+//Context Info
+import { useInfo } from '../context/infoContext'
 //Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -59,6 +61,12 @@ function InfoArso(){
     const toggleModal3 = () => {
         setModalOpen3(!isModalOpen3)
     }
+
+    const {infoList, getAllInfoApi} = useInfo()
+
+    useEffect(() => {
+        getAllInfoApi()
+    },[infoList])
 
     return (
         <>
@@ -116,18 +124,15 @@ function InfoArso(){
                     modules={[EffectCoverflow, Pagination, Navigation]}
                     className="swiper_container1"
                 >
-                    <SwiperSlide className='swiperSlide'>
-                        <video className='imgSwiper' src = {firstVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <video className='imgSwiper' src = {secondVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <video className='imgSwiper' src = {thirdVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
-                    </SwiperSlide>                    
-                    <SwiperSlide>
-                        <video className='imgSwiper' src = {thirdVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
-                    </SwiperSlide>            
+                    {
+                        infoList.map((itemInfo) => {
+                            return(
+                                <SwiperSlide>
+                                    <video className='imgSwiper' src={itemInfo.infoVideo} alt="slide_image" autoPlay = {true} muted={true} loop={true} controls={true}></video>                        
+                                </SwiperSlide>    
+                            )
+                        })
+                    }
 
                     <div className="slider-controler1">
                     <div className="swiper-button-prev slider-arrow">
