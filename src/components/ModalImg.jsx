@@ -33,7 +33,21 @@ const ModalImg = ({onRequestClose, img}) => {
                     <IoMdClose className="iconCloseImg"/>
                 </div>       
                 <div className="containerImgModal">
-                    <img src={img} alt="imgModal" />
+                    {
+                        img.match('mp4')
+                        ?
+                        <video 
+                            src = {img}
+                            loop = {true}
+                            autoPlay = {true}
+                            controls = {true}
+                            muted = {true}
+                        >
+                                
+                        </video>
+                        :
+                        <img src={img} alt="imgModal" />
+                    }
                 </div>                        
             </div>            
         </div>

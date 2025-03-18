@@ -56,7 +56,7 @@ function ManageGallery(){
                                 <thead>
                                     <tr>
                                         <th>Nombre de la Imagen</th>
-                                        <th>Imagen - Galeria</th>
+                                        <th>Galeria</th>
                                         <th className='optionsFile'>Opciones</th>
                                     </tr>
                                 </thead>
@@ -68,7 +68,20 @@ function ManageGallery(){
                                                 <tr key={gallery.id}>
                                                     <td data-label = 'Nombre - Imagen'>{gallery.nameImage}</td>
                                                     <td data-label = 'Imagen' className='containerTableImage'>
-                                                        <img src={gallery.galleryImage} alt={gallery.nameImage} />
+                                                        {
+                                                            gallery.galleryImage.match('mp4')
+                                                            ?
+                                                            <video 
+                                                                src = {gallery.galleryImage}
+                                                                loop = {true}
+                                                                autoPlay = {true}
+                                                                controls = {true}
+                                                                muted = {true}
+                                                            >
+                                                            </video>
+                                                            :
+                                                            <img src={gallery.galleryImage} alt={gallery.nameImage} />
+                                                        }
                                                     </td>
                                                     <td data-label = 'Opciones'>
                                                         <Link to={`/updateGallery/${gallery.id}`}>

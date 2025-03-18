@@ -77,7 +77,22 @@ function News(){
                                         scale : 0.8
                                     }}
                                 >                    
-                                    <img src={news.imageNew} alt="newsPicture" />
+                                    {
+                                        news.imageNew.match('mp4')
+                                        ?
+                                        <video 
+                                            className="videoNews"
+                                            src = {news.imageNew}
+                                            loop = {true}
+                                            autoPlay = {true}
+                                            controls = {true}
+                                            muted = {true}
+                                        >
+
+                                        </video>
+                                        :
+                                        <img src={news.imageNew} alt="newsPicture" />
+                                    }
                                 </motion.div>        
                             </div>
                             <div className="containerTextNews">

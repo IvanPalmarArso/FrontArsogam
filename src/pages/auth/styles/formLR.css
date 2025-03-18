@@ -68,7 +68,7 @@
     text-align: center;    
 }
 
-.containerImageMedia img{
+.containerImageMedia img, video{
     width: 90%;
     height: 30vh;
 }

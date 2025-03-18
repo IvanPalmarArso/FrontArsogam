@@ -1,5 +1,5 @@
 //React-hooks
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 //React-router-dom
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
@@ -68,20 +68,29 @@ function FormNews(){
     })
 
     //Upload Image
+
+    const [mediaSee, setMediaSee] = useState('')
+
+    const imgRef = useRef(null)
+    const videoRef = useRef(null)
+
     const uploadImage = (e) => {
         const file = e.target.files
         setImageNew(file)
 
         const fileImage = e.target.files[0]
-
-        const imageNew = document.getElementById('img')
+        const fileType = fileImage.type.split('/')[0]        
+        setMediaSee(fileType)
 
         const reader = new FileReader()
 
         reader.onload = function(e){
-            imageNew.src = e.target.result
+            if(fileType === 'image'){
+                imgRef.current.src = e.target.result
+            }else if(fileType === 'video'){
+                videoRef.current.src = e.target.result
+            }           
         }
-
         reader.readAsDataURL(fileImage)
     }
 
@@ -151,10 +160,38 @@ function FormNews(){
 
                     <div className="containerImageContent">
                         <label htmlFor="imageNew" className="imageTitleLabel">
-                            Noticia - Imagen
+                            Noticia
                         </label>
                         <div className="containerImageMedia">
-                            <img src={addImage} alt="Image" id="img" className="imageMedia"/>
+                            {
+                                mediaSee === '' && 
+                                <img 
+                                    src={addImage} 
+                                    alt="Image" 
+                                    id="img" 
+                                    className="imageMedia"/>}
+                            {   
+                                mediaSee === 'image' && 
+                                <img 
+                                    alt="Image" 
+                                    id="img" 
+                                    className="imageMedia"
+                                    ref={imgRef}
+                                />
+                            }
+                            {
+                                mediaSee === 'video' && 
+                                <video
+                                    ref = {videoRef}
+                                    autoPlay = {true}
+                                    controls = {true}
+                                    muted = {true}
+                                    loop = {true}
+                                    className="infoVideoClass"
+                                >
+
+                                </video>
+                            }
                         </div>
                         <input type="file"
                         {...register('imageNew',{
@@ -168,7 +205,7 @@ function FormNews(){
                         <br />
                         <div className="containerAddImage">
                             <label htmlFor="imageNew" className="addImageLabel">
-                                Agregar Imagen
+                                Agregar
                             </label>
                         </div>
                     </div>

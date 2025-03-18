@@ -3,7 +3,7 @@ import './styles/manageTable.css';
 //Event Context
 import { useEvent } from '../../context/eventContext';
 //React-hooks
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 //Icons 
 import { RxUpdate } from 'react-icons/rx';
 import { MdDelete } from 'react-icons/md';
@@ -18,7 +18,7 @@ function ManageEvents(){
     const {eventList, allEventsApi, deleteEventApi} = useEvent()
 
     useEffect(() => {
-        allEventsApi()
+        allEventsApi()        
     },[eventList])
 
     //Use Navigate
@@ -56,7 +56,7 @@ function ManageEvents(){
                                 <thead>
                                     <tr>
                                         <th>Nombre - Eventos</th>
-                                        <th>Imagen - Evento</th>
+                                        <th>Evento(Media)</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
@@ -66,8 +66,20 @@ function ManageEvents(){
                                             return(
                                                 <tr key={event.id}>
                                                     <td data-label = 'Nombre - Evento'>{event.nameEvent}</td>
-                                                    <td data-label = 'Imagen - Evento' className='containerTableImage'>
-                                                        <img src={event.imageEvent} alt="imageEvent" />
+                                                    <td data-label = 'Evento (Media)' className='containerTableImage'>                                                        
+                                                        {
+                                                            event.imageEvent.match('mp4') 
+                                                            ?
+                                                            <video 
+                                                                src = {event.imageEvent} 
+                                                                loop = {true}
+                                                                autoPlay = {true}
+                                                                muted = {true}
+                                                                controls = {true}
+                                                            ></video>
+                                                            :
+                                                            <img src={event.imageEvent} alt="imageEvent" /> 
+                                                        }
                                                     </td>
                                                     <td data-label = 'Opciones'>
                                                         <Link to={`/updateEvent/${event.id}`}>
@@ -105,7 +117,7 @@ function ManageEvents(){
                                                                     }else if(result.dismiss === Swal.DismissReason.cancel){
                                                                         deleteEvent.fire({
                                                                             title : 'Operación Cancelada',
-                                                                            text : 'El evento  seleccionado no sera eliminado.',
+                                                                            text : 'El evento seleccionado no sera eliminado.',
                                                                             icon : 'info',
                                                                             confirmButtonColor : '#3ed634',
                                                                             confirmButtonText : 'Cancelar'

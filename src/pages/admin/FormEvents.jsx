@@ -1,5 +1,5 @@
 //React-hooks
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 //React-router-dom
 import { useNavigate, Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
@@ -91,22 +91,33 @@ function FormEvents(){
         loadData()
     },[])
 
-    //Upload Image
+    //Upload Image    
+
+    const [mediaSee, setMediaSee] = useState('')        
+
+    const imgRef = useRef(null)
+    const videoRef = useRef(null)
 
     const uploadImage = (e) => {
-        const file = e.target.files
-        setImageEvent(file)
+        const file = e.target.files            
+        setImageEvent(file)        
 
-        const fileImage = e.target.files[0]
+        const fileImage = e.target.files[0]        
+        const fileType = fileImage.type.split('/')[0]
 
-        const imageNew = document.getElementById('img')
-
+        setMediaSee(fileType)
+    
+        
         const reader = new FileReader()
 
         reader.onload = function(e){
-            imageNew.src = e.target.result
+            if(fileType === 'image' && imgRef.current){
+                imgRef.current.src = e.target.result
+            }else if(fileType === 'video' && videoRef.current){
+                videoRef.current.src = e.target.result
+            }            
         }
-        reader.readAsDataURL(fileImage)
+        reader.readAsDataURL(fileImage)                                        
     }
 
     return(
@@ -136,10 +147,38 @@ function FormEvents(){
 
                     <div className="containerImageContent">
                         <label htmlFor="imageEvent">
-                            Evento - Imagen
-                        </label>
-                        <div className="containerImageMedia">
-                            <img src={addImage} alt="eventImage" id="img"/>
+                            Evento
+                        </label>                        
+                        <div className="containerImageMedia">          
+                            {
+                                mediaSee === '' && (
+                                    <img src={addImage} alt="eventImage" id="img"/>
+                                )
+                            }                  
+                            {
+                                mediaSee === 'image' && (
+                                    <img 
+                                        src={addImage} 
+                                        alt="eventImage" 
+                                        id="img"
+                                        ref={imgRef}
+                                    />
+                                )
+                            }
+                            {
+                                mediaSee === 'video' && 
+                                (
+                                <video 
+                                    className="infoVideoClass" 
+                                    id="video" 
+                                    controls={true}
+                                    loop={true}
+                                    autoPlay = {true}
+                                    muted = {true}
+                                    ref={videoRef}
+                                    >
+                                </video>)
+                            }
                         </div>
                         <input type="file"
                         {...register('imageEvent',{
@@ -153,7 +192,7 @@ function FormEvents(){
                         <br />
                         <div className="containerAddImage">
                             <label htmlFor="imageEvent" className="addImageLabel">
-                                Agregar Imagen
+                                Agregar Media
                             </label>
                         </div>
                     </div>

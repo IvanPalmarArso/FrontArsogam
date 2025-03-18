@@ -42,7 +42,7 @@
     position: relative;
 }
   
-.swiper-slide img {
+.swiper-slide img{
     width: 34rem;
     height: 42rem;
     border-radius: 2rem;
@@ -78,6 +78,12 @@
     height: 65vh;    
 }
 
+.containerSingleEvent .singleEventVideo{
+    height: 65vh;
+    width: 80%;
+    object-fit: fill;
+}
+
 .containerSingleEvent p{
     margin-top: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -96,6 +102,11 @@
     .containerSingleEvent .singleEventImg{
         height: 50vh;
     }
+
+    .containerSingleEvent .singleEventVideo{
+        height: 50vh;    
+    }
+
 }
   
 @media (max-width: 990px) {
@@ -140,12 +151,14 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .slider-controler .swiper-button-next {
       left: 80% !important;
       transform: translateX(-80%) !important;
     }
-
+    .containerSingleEvent .singleEventVideo{
+        height: 50vh;    
+    }
   }
   
   @media (max-width: 990px) {

@@ -14,7 +14,21 @@ export function GalleryComponent({url, alt}){
         <div onClick={toggleModal}>
             {isModalOpen && <ModalImg img={url} onRequestClose={toggleModal}/>}
             <div className="containerImg">
-                <img src={url} alt={alt} />
+                {
+                    url.match('mp4')
+                    ?
+                    <video 
+                        src = {url}
+                        loop = {true}
+                        autoPlay = {true}
+                        controls = {true}
+                        muted = {true}
+                    >
+
+                    </video>
+                    :
+                    <img src={url} alt={alt} />
+                }
             </div>
         </div>
     )

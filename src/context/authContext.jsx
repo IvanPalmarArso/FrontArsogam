@@ -4,7 +4,6 @@ import {createContext, useContext, useEffect, useState } from "react";
 import { registerUser, VerifyToken, loginUser, logOut, getOneUser, addNewUser, allUsers, deleteUser, updateUser} from "../api/user.api";
 //Cookies
 import Cookie from 'js-cookie'
-import Cookies from "js-cookie";
 
 export const AuthContext = createContext()
 
@@ -51,12 +50,12 @@ export const AuthProvider = ({children}) => {
 
     const logoutUserApi = async () => {
         try{
-            const res = await logOut()
-            console.log(res)
+            const res = await logOut()            
             setIsAuthenticated(false)
             setUser(null)
+            const cookieAuth = Cookie.remove('csrftoken')                                
         }catch(err){
-            console.log(err.response.data)
+            console.error(err)
         }     
     }
 

@@ -1,5 +1,5 @@
 //React-hooks
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 //React-router-dom
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
@@ -87,19 +87,28 @@ function FormGallery(){
         }
     })
 
+    //Upload File
+    const [mediaSee, setMediaSee] = useState('')
+
+    const imgRef = useRef(null)
+    const videoRef = useRef(null)
 
     const uploadGalleryImage = (e) => {
         const file = e.target.files
         setImageGall(file)
 
         const fileImage = e.target.files[0]
-
-        const imageGall = document.getElementById('img')
+        const fileType = fileImage.type.split('/')[0]
+        setMediaSee(fileType)
 
         const reader = new FileReader()
 
         reader.onload = function(e){
-            imageGall.src = e.target.result
+            if(fileType === 'image'){
+                imgRef.current.src = e.target.result
+            }else if(fileType === 'video'){
+                videoRef.current.src = e.target.result
+            }            
         }   
 
         reader.readAsDataURL(fileImage)
@@ -133,10 +142,36 @@ function FormGallery(){
 
                     <div className="containerImageContent">
                         <label htmlFor="galleryImage" className="imageTitleLabel">
-                            Seleccionar Imagen
+                            Galer<span className="tildesFont">í</span>a
                         </label>
                         <div className="containerImageMedia">
-                            <img src={addDefaultImage} id="img" className="imageMedia"/>                            
+                            {
+                                mediaSee === '' && 
+                                <img 
+                                    src={addDefaultImage}                                 
+                                    className="imageMedia"
+                                />                            
+                            }
+                            {
+                                mediaSee === 'image' &&
+                                <img 
+                                    src={addDefaultImage}                                     
+                                    className="imageMedia"
+                                    ref={imgRef}
+                                />                            
+                            }
+                            {
+                                mediaSee === 'video' &&
+                                <video 
+                                    className="infoVideoClass"
+                                    autoPlay = {true}
+                                    loop = {true}
+                                    muted = {true}
+                                    controls = {true}
+                                    ref={videoRef}
+                                >
+                                </video>
+                            }
                         </div>
                         <input type="file"
                         {...register('galleryImage',{
@@ -150,7 +185,7 @@ function FormGallery(){
                         <br />                        
                         <div className="containerAddImage">
                             <label htmlFor="gallerymage" className="addImageLabel">
-                                Agregar Imagen 
+                                Agregar Media
                             </label>
                         </div>
                     </div>

@@ -33,7 +33,7 @@ function Home(){
             Swal.fire({
                 title : 'Próximo Evento',
                 text : lastEvent.nameEvent,
-                imageUrl : lastEvent.imageEvent,
+                imageUrl : lastEvent.imageEvent.match('mp4') ? null : lastEvent.imageEvent,
                 imageHeight : 350,    
                 imageWidth : 320,
                 showCloseButton : true,

@@ -66,7 +66,21 @@ function ManageNews(){
                                                     <td data-label = 'Nombre - Noticia'>{news.newName}</td>
                                                     <td data-label = 'Descripción - Noticia' >{news.textNew.slice(0, 255)}...</td>
                                                     <td data-label = 'Imagen - Noticia' className='containerTableImage'>
-                                                        <img src={news.imageNew} alt="Notice Image" />
+                                                        {
+                                                            news.imageNew.match('mp4')
+                                                            ?   
+                                                            <video 
+                                                                src = {news.imageNew}
+                                                                autoPlay = {true}
+                                                                loop = {true}
+                                                                muted = {true}
+                                                                controls = {true}
+                                                            >
+
+                                                            </video>
+                                                            :
+                                                            <img src={news.imageNew} alt="Notice Image" />
+                                                        }
                                                     </td>
                                                     <td data-label = 'Opciones'>
                                                         <Link to={`/updateNews/${news.id}`}>

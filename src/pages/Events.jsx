@@ -115,7 +115,22 @@ function Events(){
                                     <SwiperSlide>
                                         <div className="containerSingleEvent" key={event.imageEvent}>
                                             <div className="containerImageEvent">
-                                                <img className="singleEventImg" src={event.imageEvent} alt="Event Image" />
+                                                {
+                                                    event.imageEvent.match('mp4')
+                                                    ?
+                                                    <video 
+                                                        src = {event.imageEvent}
+                                                        loop = {true}
+                                                        autoPlay = {true}
+                                                        controls = {true}
+                                                        muted = {true}
+                                                        className="singleEventVideo"
+                                                    >
+                                                            
+                                                    </video>
+                                                    :
+                                                    <img className="singleEventImg" src={event.imageEvent} alt="Event Image" />
+                                                }
                                             </div>
                                             <div>
                                                 <p>
