@@ -38,13 +38,13 @@
   
 .swiper-slide {
     width: 20rem;
-    height: 40rem;
-    position: relative;
+    height: 2rem;
+    position: relative;    
 }
   
 .swiper-slide img{
     width: 34rem;
-    height: 42rem;
+    height: 50rem;
     border-radius: 2rem;
     object-fit:cover;
 }
@@ -56,10 +56,10 @@
   
 .slider-controler {
     position: relative;
-    bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
+    display: none;
 }
   
 .slider-controler .swiper-button-next {

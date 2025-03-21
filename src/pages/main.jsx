@@ -31,7 +31,6 @@ function Home(){
             const lastEvent = eventList.slice(-1)[0]                           
 
             Swal.fire({
-                title : 'Próximo Evento',
                 text : lastEvent.nameEvent,
                 imageUrl : lastEvent.imageEvent.match('mp4') ? null : lastEvent.imageEvent,
                 imageHeight : 350,    
