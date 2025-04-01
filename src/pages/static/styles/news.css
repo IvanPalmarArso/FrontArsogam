@@ -8,8 +8,8 @@
 
 .containerNewsSection{
     background-image: url('../img/background.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
     padding: 300px;
     padding-right: 300px;
     padding-left: 300px;
@@ -34,9 +34,13 @@
     margin-top: 70px;
     width: 60%;
     text-align: end;
+    color: rgb(0, 101, 51);        
+}
+
+.containerTitleNew .titleH4{
     color: rgb(0, 101, 51);
-    font-weight: bold;
-    font-family: 'Bella';
+    text-align: end;
+    font-weight: 900;
 }
 
 .containerImgTextNew{

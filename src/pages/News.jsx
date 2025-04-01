@@ -59,7 +59,7 @@ function News(){
                         <div className="containerSingleNew">
                         <div className="containerTitleNewMain">
                             <div className="containerTitleNew">
-                                <h4>
+                                <h4 className="tildesFont titleH4">
                                     {news.newName}
                                 </h4>
                             </div>
