@@ -117,8 +117,8 @@
 
 .containerImageNews .videoNews{
     width: 100%;
-    height: 35vh;
-    border-radius: 50px;    
+    height: 35vh;    
+    margin-left: -40px;
 }
 
 @media (max-width:1900px) {
@@ -165,7 +165,11 @@
     }
     
     .containerImageNews img{
-        width: 105%;
+        width: 105%;        
+    }
+
+    .containerImageNews .videoNews{
+        margin-left: 0px;
     }
 }
 
